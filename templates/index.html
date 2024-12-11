@@ -69,15 +69,59 @@
         <img class="left-image" src="{% static 'images/UK_proz.png' %}">
     </header>
 
-    <div class="container">
-        {% for link in links %}
-        <div class="card">
-            <h2>{{ link.name }}</h2>
-            <p>{{ link.description }}</p>
-            <a href="{{ link.url }}" target="_blank">Visit</a>
+<div class="banner-wrapper">
+    <button class="scroll-button left" onclick="scrollLeftCustom()">&#8592;</button>
+    <div class="banner-container">
+        <!-- Первые 5 баннеров -->
+        <div class="banner banner1">
+            <h3>TED</h3>
+            <img src=" {% static 'images/TED.jpg'%}">
+            <p>Популяризирует знания о технологиях, дизайне и других сферах жизни.</p>
+            <p>Материалы фонда пригодятся не только для расширения кругозора, но и для изучения английского. У роликов есть субтитры
+                и анимированные расшифровки: одновременно
+                с речью открывается интерактивный текст, и если кликнуть на фразу или слово, видео перескочит на соответствующий момент.</p>
         </div>
-        {% endfor %}
+        <div class="banner banner2">
+            <h3>Englex</h3>
+            <p>Онлайн-школа английского языка, индивидуальные занятия с преподавателями.</p>
+        </div>
+        <div class="banner banner3">
+            <h3>Skyeng</h3>
+            <p>Онлайн-школа английского, обучение с носителями языка и много ресурсов.</p>
+        </div>
+        <div class="banner banner4">
+            <h3>EnglishMaria</h3>
+            <p>Уроки и материалы для улучшения навыков английского языка.</p>
+        </div>
+        <div class="banner banner5">
+            <h3>Lazy_English</h3>
+            <p>Простой и увлекательный подход к изучению английского.</p>
+        </div>
+        <!-- Остальные баннеры -->
+        <div class="banner banner6">
+            <h3>Extra 1</h3>
+            <p>Еще один баннер для проверки функционала.</p>
+        </div>
+        <div class="banner banner7">
+            <h3>Extra 2</h3>
+            <p>Описание дополнительного баннера.</p>
+        </div>
+        <div class="banner banner8">
+            <h3>Extra 3</h3>
+            <p>Описание еще одного баннера.</p>
+        </div>
+        <div class="banner banner9">
+            <h3>Extra 4</h3>
+            <p>Описание дополнительного баннера.</p>
+        </div>
+        <div class="banner banner10">
+            <h3>Extra 5</h3>
+            <p>Последний дополнительный баннер.</p>
+        </div>
     </div>
+    <button class="scroll-button right" onclick="scrollRightCustom()">&#8594;</button>
+</div>
+
 
     <footer>
         <p>&copy; 2024 English Olympiad. All rights reserved.</p>

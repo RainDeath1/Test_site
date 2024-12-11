@@ -1,4 +1,3 @@
-/* static/css/style.css */
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -49,18 +48,20 @@ header {
     display: flex;
     align-items: center;
     justify-content: start;
-    gap: 20px; /* Расстояние между изображением и текстом */
+    gap: 20px;
     padding: 20px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic|Playfair+Display+SC:400,700&subset=latin,cyrillic);
+
 @import url(https://fonts.googleapis.com/css?family=Lora:400,700&subset=latin,cyrillic);
+
 header h1, header p {
     margin: 0;
     font-family: 'Playfair Display SC', serif
 }
 
-/* Общие стили для меню */
+
 .menu {
     list-style: none;
     padding: 0;
@@ -87,7 +88,6 @@ header h1, header p {
     color: #007BFF;
 }
 
-/* Стили для вложенного меню */
 .submenu {
     list-style: none;
     padding: 0;
@@ -117,23 +117,9 @@ header h1, header p {
     color: #007BFF;
 }
 
-/* Показываем меню при наведении */
 .menu-item:hover .submenu {
     display: block;
 }
-
-
-/*.white{*/
-/*    color: white;*/
-/*}*/
-
-/*.red{*/
-/*    color: red;*/
-/*}*/
-
-/*.blue{*/
-/*    color: blue;*/
-/*}*/
 
 body {
     margin: 0;
@@ -201,7 +187,7 @@ header {
 .arrow-container i {
     font-size: 10px;
     color: black;
-    transition: color 0.3s ease; /* Добавляем плавный переход цвета */
+    transition: color 0.3s ease;
 }
 
 .dropdown-menu {
@@ -210,7 +196,7 @@ header {
     padding: 0;
     position: absolute;
     top: 100%;
-    left: 0; /* Меню теперь появляется прямо под стрелкой */
+    left: 0;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     opacity: 0;
@@ -234,7 +220,6 @@ header {
     color: #007BFF;
 }
 
-/* Показываем меню при наведении на стрелку или само меню */
 .arrow-container:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -288,6 +273,219 @@ footer {
     color: #E1306C;
 }
 
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+header {
+    flex: 0 0 auto;
+}
+
+.container {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Убираем стандартный скроллбар */
+.banner-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Контейнер для баннеров */
+.banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Высота контейнера на весь экран */
+    display: flex;
+    align-items: center; /* Центрируем кнопки и баннеры по вертикали */
+    overflow: hidden; /* Скрываем лишнее содержимое */
+    box-sizing: border-box;
+}
+
+/* Горизонтальный контейнер с баннерами */
+.banner-container {
+    display: flex;
+    gap: 30px; /* Расстояние между баннерами */
+    height: 100%; /* Полная высота контейнера */
+    overflow-x: hidden; /* Скроем горизонтальный скроллбар */
+    scroll-behavior: smooth; /* Плавный скролл */
+    flex: 1; /* Занимает оставшуюся ширину */
+    padding: 0 60px; /* Пространство для кнопок */
+}
+
+/* Индивидуальные баннеры */
+.banner {
+    flex: 0 0 300px; /* Фиксированная ширина баннера */
+    height: 100%; /* Полная высота контейнера */
+    transform: rotate(5deg); /* Угол наклона */
+    transform-origin: bottom center;
+    border-radius: 10px;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Текст располагается внизу баннера */
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.scroll-button.left {
+    left: 10px;
+}
+
+.scroll-button.right {
+    right: 10px;
+}
+
+
+
+.banner-container {
+    display: flex;
+    gap: 30px; /* Расстояние между баннерами */
+    height: 100%; /* Полная высота контейнера */
+    overflow-x: scroll; /* Горизонтальный скролл включен */
+    scroll-behavior: smooth; /* Плавный скролл */
+    padding: 0 60px; /* Пространство для кнопок */
+}
+
+/* Убираем горизонтальный скроллбар */
+.banner-container::-webkit-scrollbar {
+    display: none;
+}
+
+.banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Полная высота контейнера */
+    display: flex;
+    align-items: center; /* Центрируем баннеры по вертикали */
+    overflow: hidden; /* Скрываем лишнее содержимое */
+    box-sizing: border-box;
+}
+
+.banner-container {
+    display: flex;
+    gap: 30px; /* Расстояние между баннерами */
+    height: 100%; /* Полная высота контейнера */
+    overflow-x: auto; /* Горизонтальный скролл */
+    scroll-behavior: smooth; /* Плавный скролл */
+    padding: 0 60px; /* Пространство для кнопок */
+}
+
+.banner {
+    flex: 0 0 300px; /* Фиксированная ширина */
+    height: auto; /* Полная высота контейнера */
+    transform: rotate(3deg); /* Угол наклона */
+    transform-origin: bottom center;
+    border-radius: 10px;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Текст располагается внизу баннера */
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.banner img{
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.banner h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000; /* Черный цвет текста */
+    text-align: center; /* Центрируем текст */
+}
+
+
+.banner p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333; /* Темный текст */
+    text-align: justify; /* Выравнивание по ширине */
+    overflow: hidden; /* Убираем прокрутку */
+}
+
+.banner1 { background: linear-gradient(135deg, #f94144, #f3722c); }
+.banner2 { background: linear-gradient(135deg, #f9c74f, #90be6d); }
+.banner3 { background: linear-gradient(135deg, #43aa8b, #4d908e); }
+.banner4 { background: linear-gradient(135deg, #577590, #277da1); }
+.banner5 { background: linear-gradient(135deg, #1d3557, #457b9d); }
+.banner6 { background: linear-gradient(135deg, #ff6f61, #d45087); }
+.banner7 { background: linear-gradient(135deg, #bc5090, #6a4c93); }
+.banner8 { background: linear-gradient(135deg, #2a9d8f, #264653); }
+.banner9 { background: linear-gradient(135deg, #e9c46a, #f4a261); }
+.banner10 { background: linear-gradient(135deg, #ffafcc, #ff6b6b); }
+
+.banner-container::-webkit-scrollbar {
+    display: none;
+}
+
+.banner-container {
+    display: flex;
+    gap: 30px; /* Расстояние между баннерами */
+    width: calc(5 * 300px + 4 * 30px); /* Ширина: 5 баннеров + 4 промежутка */
+    height: 100%; /* Полная высота контейнера */
+    overflow-x: auto; /* Включаем горизонтальный скролл */
+    overflow-y: hidden; /* Убираем вертикальный скролл */
+    scroll-behavior: smooth; /* Плавный скролл */
+    padding: 0 60px; /* Пространство для кнопок */
+    box-sizing: content-box; /* Учитываем отступы */
+}
+
+.banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Высота контейнера */
+    display: flex;
+    align-items: center; /* Центрируем баннеры по вертикали */
+    overflow: hidden; /* Скрываем лишнее содержимое */
+    box-sizing: border-box;
+}
+
+.hidden {
+    display: none;
+}
 
 
 
