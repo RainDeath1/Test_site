@@ -1,0 +1,88 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources for English Olympiad</title>
+    <!-- Локальное подключение Font Awesome -->
+    <link rel="stylesheet" href="{% static 'fontawesome/fontawesome-free-6.7.1-web/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <img class="left-image" src="{% static 'images/Preview.png' %}" alt="Пример">
+        <div class="content-below-image">
+            <h1>The Role of Social Networks in Learning English</h1>
+            <div class="social-item">
+    <div class="icon-with-text">
+        <i class="fab fa-youtube"></i>
+        <span class="social-meaning">YouTube</span>
+        <div class="arrow-container">
+            <i class="fa-solid fa-chevron-down"></i>
+            <ul class="dropdown-menu">
+                <li><a href="https://www.youtube.com/@TED" target="_blank">TED</a></li>
+                <li><a href="https://www.youtube.com/c/EnglexSchool" target="_blank">Инглекс</a></li>
+                <li><a href="https://www.youtube.com/@skyengschool/featured" target="_blank">Skyeng: онлайн-школа английского языка
+                </a></li>
+                <li><a href="https://www.youtube.com/@EnglishMaria" target="_blank">EnglishMaria</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+            <div class="social-item">
+    <div class="icon-with-text">
+        <i class="fab fa-instagram"></i>
+        <span class="social-meaning">Instagram</span>
+        <div class="arrow-container">
+            <i class="fa-solid fa-chevron-down"></i>
+            <ul class="dropdown-menu">
+                        <li><a href="https://instagram.com/eng_vlada" target="_blank">@eng_vlada</a></li>
+                        <li><a href="https://instagram.com/kevinteacherdowsett " target="_blank">2.@kevinteacherdowsett </a></li>
+                        <li><a href="https://instagram.com/lazy_english" target="_blank">@lazy_english</a></li>
+                    </ul>
+        </div>
+    </div>
+</div>
+
+                <div class="social-item">
+                    <div class="icon-with-text">
+                        <i class="fab fa-tiktok"></i>
+                        <span class="social-meaning">TikTok</span>
+                        <div class="arrow-container">
+                        <i class="fa-solid fa-chevron-down"></i>
+
+ <ul class="dropdown-menu">
+    <li><a href="https://www.tiktok.com/@ENGLINASH" target="_blank">@ENGLINASH</a></li>
+    <li><a href="https://www.tiktok.com/@zaharzhadaev.english/" target="_blank">@zaharzhadaev.english</a></li>
+    <li><a href="https://www.tiktok.com/@englishfuns/" target="_blank">@englishfuns</a></li>
+</ul>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+        <img class="left-image" src="{% static 'images/UK_proz.png' %}">
+    </header>
+
+    <div class="container">
+        {% for link in links %}
+        <div class="card">
+            <h2>{{ link.name }}</h2>
+            <p>{{ link.description }}</p>
+            <a href="{{ link.url }}" target="_blank">Visit</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <footer>
+        <p>&copy; 2024 English Olympiad. All rights reserved.</p>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
