@@ -14,8 +14,9 @@
         <img class="left-image" src="{% static 'images/Preview.png' %}" alt="Пример">
         <div class="content-below-image">
             <h1>The Role of Social Networks in Learning English</h1>
+
             <div class="social-item">
-    <div class="icon-with-text">
+    <div class="icon-with-text" data-filter="youtube">
         <i class="fab fa-youtube"></i>
         <span class="social-meaning">YouTube</span>
         <div class="arrow-container">
@@ -31,7 +32,7 @@
     </div>
 </div>
 
-            <div class="social-item">
+            <div class="social-item" data-filter="instagram">
     <div class="icon-with-text">
         <i class="fab fa-instagram"></i>
         <span class="social-meaning">Instagram</span>
@@ -46,7 +47,7 @@
     </div>
 </div>
 
-                <div class="social-item">
+                <div class="social-item" data-filter="tiktok">
                     <div class="icon-with-text">
                         <i class="fab fa-tiktok"></i>
                         <span class="social-meaning">TikTok</span>
@@ -69,46 +70,46 @@
 <div class="banner-wrapper">
     <button class="scroll-button left" onclick="scrollLeftCustom()">&#8592;</button>
     <div class="banner-container">
-        <div class="banner banner1">
+        <div class="banner banner1" data-platform="youtube">
             <h3>TED</h3>
             <img src=" {% static 'images/TED.jpg'%}">
             <p>Популяризирует знания о технологиях, дизайне и других сферах жизни.</p>
         </div>
-        <div class="banner banner2">
+        <div class="banner banner2" data-platform="youtube">
             <h3>Englex</h3>
             <img src=" {% static 'images/channels4_profile.jpg'%}">
             <p>Все материалы сайта онлайн школы "Инглекс" готовят опытные преподаватели английского, которые умеют
                 работать со студентами начальных уровней и знают, что им прдложить.</p>
         </div>
-        <div class="banner banner3">
+        <div class="banner banner3" data-platform="youtube">
             <h3>Skyeng: онлайн-школа анеглийского языка</h3>
             <img src=" {% static 'images/skyeng.jpg'%}">
             <p>Грамматика, произношение, аудирование, примеры, задания. Для начала занятий требуется некоторый уровень
             владения английским, но пусть вас это не пугает. Уроки строятся от простого к сложному и проводятся в спокойном
             темпе.</p>
         </div>
-        <div class="banner banner4">
+        <div class="banner banner4" data-platform="youtube">
             <h3>EnglishMaria</h3>
             <img src=" {% static 'images/english_maria.jpg'%}">
             <p>Канал русскоязычной преподавательницы, выпускницы Оксфорда Марии Батхан. Особая изюминка ее канала - подача
             информации в юмористическом ключе. С помощью окунания в различные комические ситуации можно учить новые слова,
             значения слов в разных контекстах, особенности произношения, правописание и многое другое</p>
         </div>
-        <div class="banner banner5">
+        <div class="banner banner5" data-platform="instagram">
             <h3>Lazy_English</h3>
             <img src=" {% static 'images/lazy_english.jpg'%}">
             <p>Это один из самых популярных аккаунтов, на который подписано свыше 800 тыс. пользователей.
                 Профиль яркий, с большим количеством картинок из популярных фильмов, мультфильмов и сериалов.
                 Ассоциация с известным персонажем помогает легче запомнить слово.</p>
         </div>
-        <div class="banner banner6">
+        <div class="banner banner6" data-platform="instagram">
             <h3>@eng_vlada</h3>
             <img src=" {% static 'images/eng_vlada.jpg'%}">
             <p>Это один из самых популярных аккаунтов, на который подписано свыше 800 тыс. пользователей.
                 Профиль яркий, с большим количеством картинок из популярных фильмов, мультфильмов и сериалов.
                 Ассоциация с известным персонажем помогает легче запомнить слово. </p>
         </div>
-        <div class="banner banner7">
+        <div class="banner banner7" data-platform="tiktok">
             <h3>englinash</h3>
             <img src=" {% static 'images/englinash.jpeg'%}">
             <p>Канал преподавательницы из США и, соответственно, кладезь произношения, идиом и выражений американского варианта английского.
@@ -116,14 +117,14 @@
                 Вы получаете отличную возможность тренировать качество и скорость произношения.
                 Также вы найдете много роликов-уроков, посвященных грамматике и лексике</p>
         </div>
-        <div class="banner banner8">
+        <div class="banner banner8" data-platform="tiktok">
             <h3>@zaharzhadaev.english</h3>
             <img src=" {% static 'images/zahar.jpeg'%}">
             <p>Автор записывает довольно продолжительные видео, в которых подробно и не торопясь учит английскому  языку.
                 С помощью этого канала сможете изучить алфавит, базовую лексику типа «как дела?» и «где туалет?»
                 и научиться письменному английскому.</p>
         </div>
-        <div class="banner banner9">
+        <div class="banner banner9" data-platform="tiktok">
             <h3>@englishfuns</h3>
             <img src=" {% static 'images/englishfuns.jpeg'%}">
             <p>Она разбирает частые ошибки иностарцев , изучающих английский, дает новую лексику и объясняет идиомы</p>

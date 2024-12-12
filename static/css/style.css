@@ -192,6 +192,7 @@ header {
     z-index: 1000;
     min-width: 150px;
     text-align: left;
+    pointer-events:none;
 }
 
 .dropdown-menu li a {
@@ -200,6 +201,7 @@ header {
     color: #333;
     text-decoration: none;
     font-size: 0.9rem;
+    pointer-events: auto;
 }
 
 .dropdown-menu li a:hover {
@@ -210,6 +212,7 @@ header {
 .arrow-container:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 .arrow-container:hover i {
@@ -398,6 +401,7 @@ header {
     box-sizing: border-box;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .banner img{
@@ -485,4 +489,17 @@ header {
         flex: 0 0 90%;
         margin: 0 auto;
     }
+}
+
+.banner[style*="display: none"] {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+
+.filters {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
 }

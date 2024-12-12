@@ -1,102 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
     const arrowContainers = document.querySelectorAll('.arrow-container');
+    const dropdownLinks = document.querySelectorAll('.dropdown-menu li a');
+    const banners = Array.from(document.querySelectorAll('.banner'));
+    const filters = document.querySelectorAll(".icon-with-text");
 
-    arrowContainers.forEach(container => {
-        container.addEventListener('mouseenter', () => {
-            let submenu = container.querySelector('.dropdown-menu');
-            if (submenu) submenu.style.display = 'block';
-        });
-
-        container.addEventListener('mouseleave', () => {
-            let submenu = container.querySelector('.dropdown-menu');
-            if (submenu) submenu.style.display = 'none';
-        });
-    });
-});
-
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    let arrowContainers = document.querySelectorAll('.arrow-container');
-
-    arrowContainers.forEach(container => {
-        container.addEventListener('mouseenter', () => {
-            let submenu = container.querySelector('.dropdown-menu');
-            if (submenu) submenu.style.display = 'block';
-        });
-
-        container.addEventListener('mouseleave', () => {
-            let submenu = container.querySelector('.dropdown-menu');
-            if (submenu) submenu.style.display = 'none';
-        });
-    });
-
-   // Функция для скролла влево
-    window.scrollLeftCustom = function () {
-        let container = document.querySelector('.banner-container');
-        let bannerWidth = document.querySelector('.banner').offsetWidth + 30; // ширина + gap
-        let currentScrollPosition = container.scrollLeft;
-
-        if (currentScrollPosition > 0) {
-            container.scrollBy({ left: -bannerWidth, behavior: 'smooth' });
-            console.log(`Скролл влево на ${-bannerWidth}`);
-        } else {
-            console.log('Достигнут левый край.');
-        }
+    const toggleSubmenu = (event, action) => {
+        const submenu = event.currentTarget.querySelector('.dropdown-menu');
+        if (submenu) submenu.style.display = action === 'show' ? 'block' : 'none';
     };
 
-    // Функция для скролла вправо
-    window.scrollRightCustom = function () {
-        let container = document.querySelector('.banner-container');
-        let bannerWidth = document.querySelector('.banner').offsetWidth + 30; // ширина + gap
-        let maxScrollPosition = container.scrollWidth - container.clientWidth;
-        let currentScrollPosition = container.scrollLeft;
+    // Event listeners for showing and hiding dropdown menus
+    arrowContainers.forEach(container => {
+        container.addEventListener('mouseenter', (event) => toggleSubmenu(event, 'show'));
+        container.addEventListener('mouseleave', (event) => toggleSubmenu(event, 'hide'));
+    });
 
-        if (currentScrollPosition < maxScrollPosition) {
-            container.scrollBy({ left: bannerWidth, behavior: 'smooth' });
-            console.log(`Скролл вправо на ${bannerWidth}`);
-        } else {
-            console.log('Достигнут правый край.');
-        }
+    // Prevent clicks on dropdown links from propagating
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', event => event.stopPropagation());
+    });
+
+    // Banner scroll functions
+    const scrollBanner = (direction) => {
+        const container = document.querySelector('.banner-container');
+        const bannerWidth = 300 + 30; // width of one banner + gap
+        container.scrollBy({ left: direction * bannerWidth, behavior: 'smooth' });
     };
-});
 
-function scrollLeftCustom() {
-    let container = document.querySelector('.banner-container');
-    let bannerWidth = 300 + 30; // ширина одного баннера + gap
-    container.scrollBy({ left: -bannerWidth, behavior: 'smooth' });
-}
+    window.scrollLeftCustom = () => scrollBanner(-1);
+    window.scrollRightCustom = () => scrollBanner(1);
 
-function scrollRightCustom() {
-    let container = document.querySelector('.banner-container');
-    let bannerWidth = 300 + 30; // ширина одного баннера + gap
-    container.scrollBy({ left: bannerWidth, behavior: 'smooth' });
-}
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    let container = document.querySelector('.banner-container');
-    let banners = Array.from(document.querySelectorAll('.banner'));
-    let bannersPerPage = 5; // Количество баннеров на одной странице
+    // Banner pagination logic
     let currentPage = 0;
+    const bannersPerPage = 5;
 
-    // Обновить видимость баннеров
-    function updateVisibleBanners() {
+    const updateVisibleBanners = () => {
         banners.forEach((banner, index) => {
-            let start = currentPage * bannersPerPage;
-            let end = start + bannersPerPage;
-            if (index >= start && index < end) {
-                banner.classList.remove('hidden');
-            } else {
-                banner.classList.add('hidden');
-            }
+            const start = currentPage * bannersPerPage;
+            const end = start + bannersPerPage;
+            banner.classList.toggle('hidden', index < start || index >= end);
         });
-    }
+    };
 
-    // Функция для скролла вправо
-    window.scrollRightCustom = function () {
+    window.scrollLeftCustom = () => {
+        if (currentPage > 0) {
+            currentPage--;
+            updateVisibleBanners();
+        } else {
+            console.log("Достигнут первый набор баннеров.");
+        }
+    };
+
+    window.scrollRightCustom = () => {
         if ((currentPage + 1) * bannersPerPage < banners.length) {
             currentPage++;
             updateVisibleBanners();
@@ -105,14 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Функция для скролла влево
-    window.scrollLeftCustom = function () {
-        if (currentPage > 0) {
-            currentPage--;
-            updateVisibleBanners();
-        } else {
-            console.log("Достигнут первый набор баннеров.");
-        }
-    };
     updateVisibleBanners();
+
+    // Banner filtering by platform
+    filters.forEach(filter => {
+        filter.addEventListener("click", () => {
+            const platform = filter.querySelector("span").textContent.toLowerCase();
+            banners.forEach(banner => {
+                banner.style.display = (banner.dataset.platform === platform || platform === "all") ? "flex" : "none";
+            });
+        });
+    });
 });
