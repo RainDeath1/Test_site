@@ -1,10 +1,4 @@
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-}
 header {
     background-color: #bee5eb;
     color: white;
@@ -36,15 +30,7 @@ header {
 .card a:hover {
     text-decoration: underline;
 }
-footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+
 header {
     display: flex;
     align-items: center;
@@ -258,13 +244,6 @@ header {
     text-decoration: underline;
 }
 
-footer {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 20px;
-}
 
 .fa-youtube{
     color:red;
@@ -281,6 +260,9 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
+    background: url('/static/images/bus_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #f9f9f9;
 }
 
 header {
@@ -294,39 +276,26 @@ header {
     align-items: center;
 }
 
-
-/* Убираем стандартный скроллбар */
 .banner-container::-webkit-scrollbar {
     display: none;
 }
 
-/* Контейнер для баннеров */
-.banner-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Высота контейнера на весь экран */
-    display: flex;
-    align-items: center; /* Центрируем кнопки и баннеры по вертикали */
-    overflow: hidden; /* Скрываем лишнее содержимое */
-    box-sizing: border-box;
-}
 
-/* Горизонтальный контейнер с баннерами */
 .banner-container {
     display: flex;
-    gap: 30px; /* Расстояние между баннерами */
-    height: 100%; /* Полная высота контейнера */
-    overflow-x: hidden; /* Скроем горизонтальный скроллбар */
-    scroll-behavior: smooth; /* Плавный скролл */
-    flex: 1; /* Занимает оставшуюся ширину */
-    padding: 0 60px; /* Пространство для кнопок */
+    gap: 30px;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    flex: 1;
+    padding: 0 60px;
 }
 
-/* Индивидуальные баннеры */
+
 .banner {
-    flex: 0 0 300px; /* Фиксированная ширина баннера */
-    height: 100%; /* Полная высота контейнера */
-    transform: rotate(5deg); /* Угол наклона */
+    flex: 0 0 300px;
+    height: 100%;
+    transform: rotate(5deg);
     transform-origin: bottom center;
     border-radius: 10px;
     color: #fff;
@@ -334,7 +303,7 @@ header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Текст располагается внизу баннера */
+    justify-content: flex-end;
     font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
@@ -374,14 +343,14 @@ header {
 
 .banner-container {
     display: flex;
-    gap: 30px; /* Расстояние между баннерами */
-    height: 100%; /* Полная высота контейнера */
-    overflow-x: scroll; /* Горизонтальный скролл включен */
-    scroll-behavior: smooth; /* Плавный скролл */
-    padding: 0 60px; /* Пространство для кнопок */
+    gap: 30px;
+    height: 100%;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 0 60px;
 }
 
-/* Убираем горизонтальный скроллбар */
+
 .banner-container::-webkit-scrollbar {
     display: none;
 }
@@ -389,65 +358,74 @@ header {
 .banner-wrapper {
     position: relative;
     width: 100%;
-    height: 100vh; /* Полная высота контейнера */
+    padding-bottom: 2rem;
+    /* height: 100vh; /* Полная высота контейнера */
     display: flex;
-    align-items: center; /* Центрируем баннеры по вертикали */
-    overflow: hidden; /* Скрываем лишнее содержимое */
+    align-items: flex-start;
+    overflow: hidden;
     box-sizing: border-box;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
+    /*background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)),
                 url('/static/images/bus_background.jpg') no-repeat center center fixed;
     background-size: cover;
+    background-attachment: fixed;*/
 }
 
 .banner-container {
     display: flex;
-    gap: 30px; /* Расстояние между баннерами */
-    height: 100%; /* Полная высота контейнера */
-    overflow-x: auto; /* Горизонтальный скролл */
-    scroll-behavior: smooth; /* Плавный скролл */
-    padding: 0 60px; /* Пространство для кнопок */
+    gap: 20px;
+    padding:2%
+    height: 80%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 60px;
+    box-sizing:border-box;
 }
 
 .banner {
-    flex: 0 0 300px; /* Фиксированная ширина */
-    height: auto; /* Полная высота контейнера */
-    transform: rotate(3deg); /* Угол наклона */
+    flex: 0 0 18%;
+    height: auto;
+    max-height:400px;
+    transform: rotate(3deg);
     transform-origin: bottom center;
     border-radius: 10px;
     color: #fff;
-    padding: 20px;
+    padding: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Текст располагается внизу баннера */
+    justify-content: flex-start;
     font-family: Arial, sans-serif;
     box-sizing: border-box;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .banner img{
-    max-width: 80%;
+    max-width: 40%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
+    margin:0 auto;
 }
 
 .banner h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #000; /* Черный цвет текста */
-    text-align: center; /* Центрируем текст */
+    color: #000;
+    text-align: center;
+    white-space: normal;
+    world-wrap: break-word;
 }
 
 
 .banner p {
     margin: 0;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #333; /* Темный текст */
-    text-align: justify; /* Выравнивание по ширине */
-    overflow: hidden; /* Убираем прокрутку */
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #333;
+    text-align: justify;
+    overflow-y: auto;
+    max-height:200px;
 }
 
 .banner1 { background: linear-gradient(135deg, #f94144, #f3722c); }
@@ -467,17 +445,44 @@ header {
 
 .banner-container {
     display: flex;
-    gap: 30px; /* Расстояние между баннерами */
-    width: calc(5 * 300px + 4 * 30px); /* Ширина: 5 баннеров + 4 промежутка */
-    height: 100%; /* Полная высота контейнера */
-    overflow-x: auto; /* Включаем горизонтальный скролл */
-    overflow-y: hidden; /* Убираем вертикальный скролл */
-    scroll-behavior: smooth; /* Плавный скролл */
-    padding: 0 60px; /* Пространство для кнопок */
-    box-sizing: content-box; /* Учитываем отступы */
+    flex-wrap:nowrap;
+
+    gap: 30px;
+    width: calc(5 * 300px + 4 * 30px);
+    height: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 2% 2%;
+    box-sizing: border-box;
 }
 
 
 .hidden {
     display: none;
+}
+
+
+
+@media (max-width: 1200px) {
+    .banner {
+        flex: 0 0 22%;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .banner {
+        flex: 0 0 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        flex: 0 0 90%;
+        margin: 0 auto;
+    }
 }
