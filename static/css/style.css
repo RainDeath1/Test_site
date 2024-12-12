@@ -1,6 +1,6 @@
 
 header {
-    background-color: #bee5eb;
+    background-color:  #99987D;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -58,7 +58,7 @@ header h1, header p {
 }
 .social-meaning{
     font-family: 'Lora', Serif;
-
+    color: #A03442;
 }
 .menu-item {
     position: relative;
@@ -143,6 +143,11 @@ header {
     margin: 0 0 20px 0;
     font-size: 1.8rem;
     font-weight: bold;
+    text-shadow:
+        2px 2px 0px black, /* Тень справа снизу */
+        -2px 2px 0px black, /* Тень слева снизу */
+        2px -2px 0px black, /* Тень справа сверху */
+        -2px -2px 0px black; /* Тень слева сверху */
 }
 
 .social-line {
